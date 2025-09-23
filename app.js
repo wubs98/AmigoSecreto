@@ -1,6 +1,22 @@
 let amigos = [];
-let i = 0;
-let count = 0;
+let i = -1;
+let count = -1;
+
+function gerarIndiceAleatorio(){
+
+    //Função não está sorteando o primeiro elemento da lista "índice 0"
+
+    tamanhoLista = amigos.length;
+
+    let indice = Math.floor(Math.random() * tamanhoLista);
+
+    if (tamanhoLista == 1){
+        alert("Insira mais amigos para sortear");
+    } else {
+        return indice;
+    }
+}
+
 
 function limparCampo(){
 
@@ -14,7 +30,7 @@ function percorreLista(){
     let lista = document.getElementById("listaAmigos");
     let amigo;
 
-    while (i < count){
+    while (i <= count){
         amigo = document.createElement("li");
         amigo.textContent = amigos[i];
         lista.appendChild(amigo);
@@ -38,4 +54,14 @@ function adicionarAmigo() {
     limparCampo();
 }
 
+function sortearAmigo(){
 
+    let amigoSorteado = document.getElementById("resultado");
+
+    if (count != 0){
+        j = gerarIndiceAleatorio();
+        amigoSorteado.innerHTML = `O sorteado foi: ${amigos[j]}!`;
+    } else {
+        alert("Adicione Amigos na Lista");
+    }
+}
