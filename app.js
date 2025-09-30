@@ -6,8 +6,7 @@ function gerarIndiceAleatorio(){
 
     //Função não está sorteando o primeiro elemento da lista "índice 0"
 
-    tamanhoLista = amigos.length;
-
+    let tamanhoLista = amigos.length;
     let indice = Math.floor(Math.random() * tamanhoLista);
 
     if (tamanhoLista == 1){
@@ -58,7 +57,7 @@ function sortearAmigo(){
 
     let amigoSorteado = document.getElementById("resultado");
 
-    if (count != 0){
+    if (count > 0){
         j = gerarIndiceAleatorio();
         amigoSorteado.innerHTML = `O sorteado foi: ${amigos[j]}!`;
     } else {
